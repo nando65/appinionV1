@@ -1,0 +1,7 @@
+<p>Tell us about yourself...</p>
+<% @videos.each do |video| %>
+  <%= link_to video, class: 'thumbnail-video' do %>
+     <%= image_tag video.thumbnail.url(:medium_nr) %>
+  <% end %>
+<% end %>
+
