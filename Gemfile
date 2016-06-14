@@ -65,3 +65,6 @@ group :development do
 end
 
 gem 'haml'
+gem "font-awesome-rails"
+
+gem 'bootstrap-slider-rails'

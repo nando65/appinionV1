@@ -3,7 +3,7 @@ class VideoPublisher
   include Sidetiq::Schedulable
 
 
-    recurrence { minutely.second_of_minute(100, 0, 0, 10, 0, 5) }
+    recurrence { minutely.second_of_minute(1000000, 0, 0, 10, 0, 5) }
 
 
   def perform

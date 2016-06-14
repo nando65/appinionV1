@@ -1,6 +1,5 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_video, only: [:show, :edit, :like, :dislike]
 
   # All published videos
   def index
@@ -8,6 +7,9 @@ class VideosController < ApplicationController
   end
 
   def show
+    if params[:id]
+      @video = Video.find_by(id: params[:id])
+    end
   end
 
   def new
@@ -22,8 +24,8 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
-        format.json { render :show, status: :created, location: @video }
+        format.html { redirect_to :back, notice: 'Video was successfully created.' }
+
       else
         format.html { render :new }
         format.json { render json: @video.errors, status: :unprocessable_entity }
@@ -42,11 +44,9 @@ class VideosController < ApplicationController
   end
 
   private
-  def set_video
-    @video = Video.find(params[:id])
-  end
+
 
   def video_params
-    params.require(:video).permit(:video_file, :name)
+    params.require(:video).permit(:video_file, :name, :user_id)
   end
 end

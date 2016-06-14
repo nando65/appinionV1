@@ -22,6 +22,21 @@ body{
   position:relative;
 }
 
+#topic-of-the-day{
+  position:fixed;
+  margin-left:7%;
+  text-align:center;
+  background-color:white;
+  height:30px;
+  margin-bottom:10px;
+}
+
+#clear{
+  position:relative;
+  height:30px;
+  display:block;
+}
+
 footer{
   background-color: #b51812 !important;
    position:fixed;
@@ -63,4 +78,69 @@ input{
 #video_video_file .file .optional input{
   background-color:green !important;
   color:transparent;
+}
+
+#choose-file-fake{
+    border-radius:150px;
+    height:50px;
+    width:50px;
+    background-color:white;
+}
+#upload-button-fake{
+     border-radius:150px;
+    height:50px;
+    width:50px;
+    background-color:white;
+}
+.index-row{
+  height:55px;
+  padding-top:20px;
+  text-align:left;
+
+}
+
+.index-row a{
+color:grey;
+}
+
+.index-row-right-side{
+float:right;
+margin-right:20px;
+}
+.separating-line{
+  width:100%;
+  background-color:#b51812;
+  height:1px;
+}
+
+.inputs-container{
+  padding-top:20px;
+}
+#charisma-text{
+  text-align:left;
+  margin-left:10px;
+}
+
+#advice_input{
+ width:100%;
+          background-color:white;
+          height:25px;
+          float:left;
+          border:black solid 1px;
+          vertical-align: bottom;
+          margin-bottom:10px;
+}
+
+.btn-send-advice{
+  height:30px !important;
+  display:block;
+  width:100%;
+  border:none;
+  margin-bottom:50px;
+  background-color:#12A5F4;
+  color:white;
+}
+
+#slider{
+  height:20px;
 }

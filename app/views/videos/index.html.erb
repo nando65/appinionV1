@@ -1,7 +1,14 @@
-<p>Tell us about yourself...</p>
-<% @videos.each do |video| %>
-  <%= link_to video, class: 'thumbnail-video' do %>
-     <%= image_tag video.thumbnail.url(:medium_nr) %>
-  <% end %>
+<div id="topic-of-the-day">Tell us about yourself...</div>
+<span id="clear"></span>
+<div class="separating-line"></div>
+
+<% @videos.each do |v| %>
+<div class="index-row">
+     <%=link_to v.user.first_name+" "+v.user.last_name, :controller => 'videos', :action => 'show', :id=> v.id %>
+<div class="index-row-right-side">
+  <i class="fa fa-eye" aria-hidden="true"></i>
+</div>
+</div>
+<div class="separating-line"></div>
 <% end %>
 

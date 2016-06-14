@@ -1,0 +1,47 @@
+  <video autobuffer="autobuffer" preload="auto" style="width:100%;height:100%;" controls="controls" width="100%" height="100%" poster="<%= @video.mp4_file.url(:preview)%>" >
+
+      <source  src="<%= @video.mp4_file.url%>"  />
+
+     <%if @video.mp4_file.expiring_url(:mp4video).present? %>
+     <source type="video/mp4"  src="<%= @video.mp4_file.url(:mp4video)%>" />
+      <%end%>
+     </video>
+<div class="inputs-container">
+
+  <div class="first-input-container">
+  <p id="charisma-text">Charisma - Overall</p>
+    <div id="slider">
+      <input class="bar" type="range" id="rangeinput" value="50" onchange="rangevalue.value=value"/>
+      <output id="rangevalue">50</output>
+    </div>
+  </div>
+
+  <div class="first-input-container">
+  <p id="charisma-text">Message - Clear & original</p>
+    <div id="slider">
+      <input class="bar" type="range" id="rangeinput" value="50" onchange="rangevalue.value=value"/>
+      <output id="rangevalue">50</output>
+    </div>
+  </div>
+
+  <div class="first-input-container">
+  <p id="charisma-text">Delivery - Speed, fillers & enunciation</p>
+    <div id="slider">
+      <input class="bar" type="range" id="rangeinput" value="50" onchange="rangevalue.value=value"/>
+      <output id="rangevalue">50</output>
+    </div>
+  </div>
+
+
+
+          <input type="text" name="fname" id="advice_input" placeholder=" Optional feedback...">
+
+          <%= submit_tag "Submit anonymously", class:"btn-send-advice" %>
+
+
+</div>
+
+
+
+
+

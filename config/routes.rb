@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   resources :users
 
+match ':controller(/:action(:/id))', :via => [:post, :get]
   mount Sidekiq::Web => '/sidekiq'
 end

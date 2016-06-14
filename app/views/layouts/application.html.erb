@@ -8,7 +8,6 @@
 </head>
 <body>
     <!-- Navigation -->
-
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -50,12 +49,46 @@
     <!-- /.wrapper-body -->
         <!-- Footer -->
 
-        <footer>
+<footer>
+        <button type="button" id="choose-file-fake"onclick="chooseFile();"><i class="fa fa-video-camera" aria-hidden="true"></i></button>
             <%= simple_form_for @video, html: { multipart: true, class: 'upload-button' } do |f| %>
-            <%= f.input :video_file, as: :file%>
-            <%= f.button :submit, class: 'btn-primary', value: 'Upload Video'%>
+            <div style="height:0px;overflow:hidden">
+                <%= f.input :video_file, as: :file%>
+            </div>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+             <button type="button" id="upload-button-fake"onclick="uploadFile();" style="display:none"><i class="fa fa-cloud-upload fa-2x" aria-hidden="true"></i></button>
+                <div style="height:0px;overflow:hidden">
+                <%= f.button :submit, class: 'btn-primary', id:'upload-hidden-button', value: 'Upload Video'%>
+                </div>
             <% end %>
-        </footer>
+
+     <script>
+     //repalace the ugly default choose file button
+       function chooseFile() {
+          $("#video_video_file").click();
+       }
+
+       //replace the upload button
+       function uploadFile() {
+        //repalace the ugly default choose file button
+          $("#upload-hidden-button").click();
+       }
+
+
+       //detect if a file has been chosen
+       $('#video_video_file').change(function() {
+        // If the upload field is empty, we'll hide te upload button,
+        // Otherwise, let's show it.
+        if($('#video_video_file').val() ==null ) {
+
+        } else {
+           $('#choose-file-fake').hide();
+           $('#upload-button-fake').show();
+        } // end if/else
+
+    });
+    </script>
+</footer>
 
 
 

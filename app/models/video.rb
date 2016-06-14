@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
   has_attached_file :webm_file
   has_attached_file :ogg_file
   # Styles declaration makes paperclip to use imagemagick to resize image to given size
-  has_attached_file :thumbnail, styles: { medium_nr: "250x150!" }
+  has_attached_file :thumbnail, styles: { medium_nr: "250x150!", thumb: "80x80" }
 
   # Paperclip requires to set attachment validators
   validates_attachment_content_type :video_file, content_type: /\Avideo/
