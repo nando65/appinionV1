@@ -4,6 +4,12 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
+
+  if Rails.env.development?
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+end
+    #config.omniauth :facebook, '602229859946017', '1b6deddee6b256a7222964850f4ce1a8', scope: 'email,user_friends'
+    config.omniauth :facebook, '388790654624959', 'dee913a029cb915a7cee2bca0f6c43b4', scope: 'email,user_friends,public_profile,user_location', info_fields: 'email,first_name, last_name, gender, picture, location'
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '71ca8833134eaa95c94dda6e0cbdffca0dfe80c699f59ffe4c3e3aeca7eb55281665213bbb8cb61a39ef6862d1ce1dbc83118ff1620cbfd2fb9f70872c744c55'
@@ -243,6 +249,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
+
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
@@ -265,4 +273,6 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  config.secret_key = '967a6c0ddd9a7eaa660164f93da89f54022bb9ec28586a4b454af7f231ad37873f35837d224ae2b71f8c41e1afe53459c2df9c79ac1d682ef91970a7f576752c'
 end

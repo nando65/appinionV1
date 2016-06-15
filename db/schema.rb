@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614015104) do
+ActiveRecord::Schema.define(version: 20160614111118) do
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at",                     null: false
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20160614015104) do
     t.string   "pn_auth_key",            limit: 255
     t.string   "first_name",             limit: 255
     t.string   "last_name",              limit: 255
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

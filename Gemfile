@@ -68,3 +68,10 @@ gem 'haml'
 gem "font-awesome-rails"
 
 gem 'bootstrap-slider-rails'
+
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+gem 'therubyracer'

@@ -1,7 +1,7 @@
 <div id="topic-of-the-day">Tell us about yourself...</div>
 <span id="clear"></span>
 <div class="separating-line"></div>
-
+<%= link_to('Cerrar Sesión', destroy_user_session_path, :method => :delete) %>
 <% @videos.each do |v| %>
 <div class="index-row">
      <%=link_to v.user.first_name+" "+v.user.last_name, :controller => 'videos', :action => 'show', :id=> v.id %>
